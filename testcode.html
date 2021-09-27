@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <canvas id="cv" width="684px" height="384px" style="border:1px solid #a2a2a2;"></canvas>
+    <p id="tinhToan"></p>
+</head>
+<body>
+<script>
+    class HinhVuong {
+        x;
+        y;
+        side;
+        color;
+
+        constructor(x, y, side,color) {
+            this.x = x;
+            this.y = y;
+            this.side = side;
+            this.color = color;
+        }
+
+        setSide(side) {
+            this.side =side;
+        }
+
+        getPerimeter() {
+            return this.side * 4;
+        }
+
+        // getRandomColor() {
+        //     let red = Math.floor(Math.random() * 255);
+        //     let green = Math.floor(Math.random() * 255);
+        //     let blue = Math.floor(Math.random() * 255);
+        //     return "rgb(" + red + "," + blue + "," + green + ")";
+        // }
+         getArea(){
+            return this.side ** 2;
+         }
+         draw(ctx){
+             ctx.rtect(this.x, this.y, this.side, this.side)
+             ctx.fillStyle = this.color;
+             ctx.fill();
+         }
+
+    }
+    let ctx = document.getElementById('cv').getContext('2d');
+    for ( let i = 0 ; 1<10; i++){
+        let x = math.random() * 300
+        let y = math.random() * 500
+        let sq = new Square(30, x ,y, 'blue')
+        sq.draw(ctx)
+    }
+
+
+</script>
+</body>
+</html>
